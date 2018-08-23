@@ -11,6 +11,23 @@ This app demonstrates how quickly you can build an app on Bluemix using the Weat
 ## Application Requirements
 You can use this app in any browser.
 
+## Run the app on Bluemix を ibmcloud コマンドで実行する場合
+
+push したら、すぐに起動: 
+```sh
+$ ibmcloud login
+$ ibmcloud target --cf
+$ ibmcloud cf push
+```
+
+push しても、起動させずに手動スタート: 
+```
+$ ibmcloud login
+$ ibmcloud target --cf
+$ ibmcloud cf push --no-start
+$ ibmcloud cf start [host name]
+```
+
 ## Run the app on Bluemix
 You can deploy your own instance of Weather Company Data demo app to Bluemix. 
 To do this, you can either use the _Deploy to Bluemix_ button for an automated deployment or follow the steps below to create and deploy your app manually.

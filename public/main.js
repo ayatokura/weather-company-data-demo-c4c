@@ -188,7 +188,7 @@ function renderForecastDay(forecast, index) {
 	+		'<tr>'
 	+			'<td align="center" height="60px" width="120px" style="background-color:#5599C8; color:white;">'
 	+				'<span style="font-size:12pt; font-weight:bold; font-family:sans-serif; color:white;">' 
-	+					forecast.dow
+	+					"💁‍" + forecast.dow
 	+ 				'</span>'
 	+			'</td>'
 	+			'<td valign="top" align="left" height="60px" width="345px" style="background-color:#164F9C">'
@@ -515,9 +515,10 @@ function weatherAPI(path, qs, done) {
    	$.ajax({
 		url: path,
 		type: 'GET',
-		contentType:'application/json',
+		contentType:'application/json', 
 		data: qs,
   		success: function(data) {
+			  console.log(data); 
   			if (data.message == 401) {
   				try {
   					data.data = JSON.parse(data.data);
@@ -584,6 +585,7 @@ function setLocation(geocode, units, language) {
 		units: units,
 		language: language
 	}, function(err, data) {
+		console.log(JSON.stringify(data)); 
   		if (err) {
   			showError('#daily_throbber', '#daily_error', '#daily_display', err);
   		} else {
@@ -602,6 +604,7 @@ function setLocation(geocode, units, language) {
 		units: units,
 		language: language
 	}, function(err, data) {
+		console.log(JSON.stringify(data)); // Console Log
   		if (err) {
   			showError('#hourly_throbber', '#hourly_error', '#weather_hourly', err);
   		} else {

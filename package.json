@@ -15,7 +15,7 @@
     "express": "3.4.7",
     "helmet": "^2.1.1",
     "request": "^2.51.0"
-  },  
+  },
   "author": [
     {
       "name": "Robert Desbiens",
@@ -28,5 +28,5 @@
       "email": "smith@ca.ibm.com"
     }
   ],
-   "license": "Apache License"
+  "license": "Apache License"
 }

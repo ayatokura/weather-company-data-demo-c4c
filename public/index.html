@@ -10,7 +10,7 @@
 <body onload="init()" style="background-color:#B7D2DD; margin:0; font-family:Arial; color:white;">
 
 <!-- header -->
-<div style="background-color:#131F2D;">
+<div style="background: #0f0c29; /* fallback for old browsers */background: -webkit-linear-gradient(to right, #0f0c29, #302b63, #24243e); /* Chrome 10-25, Safari 5.1-6 */background: linear-gradient(to right, #0f0c29, #302b63, #24243e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;">
 	<div style="width:800px; margin:0 auto;">
 		<table>
 			<tr>
@@ -18,7 +18,7 @@
 					<img src="images/logo_small.png" style="margin-top:3px;"/>
 				</td>
 				<td nowrap="nowrap">
-					<span style="font-size:14pt; padding:0 8px;">Weather Company Data for IBM Bluemix</span>
+					<span style="font-size:14pt; padding:0 8px;">Weather Company Data for IBM Cloud</span>
 				</td>
 				<td width="100%">
 				</td>
@@ -31,12 +31,14 @@
 </div>
 
 <!-- location bar -->
-<div style="background-color:#263F5D; font-size:10pt; color:white;">
+	<!-- <div style="background-color:#263F5D; font-size:10pt; color:white;"> -->
+<div style="background: #0f2027; background: -webkit-linear-gradient(to right, #0f2027, #203a43, #2c5364); background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */; font-size:10pt; color:white;">
 	<form name="weather_form">
 		<table style="width:800px; height:70px; margin:0 auto;">
 			<tr>
 				<td>
 					<select id="weather_presets" name="weather_presets" style="width:200px; height:40px; margin:0px; background-color:#B7D2DD; font-size:14pt; font-weight:bold;" onchange="setLocation(this.options[this.selectedIndex].value)">
+						<option value="35.68,139.68">Tokyo</option>						
 						<option value="42.34,-75.18">New York</option> 
 						<option value="45.43,-75.68">Ottawa</option>
 						<option value="51.51,0.13">London</option>
@@ -46,7 +48,6 @@
 						<option value="18.97,72.83">Mumbai</option>
 						<option value="27.70,85.33">Kathmandu</option>
 						<option value="39.91,116.38">Beijing</option>
-						<option value="35.68,139.68">Tokyo</option>
 					</select>
 				</td>
 				<td>
@@ -89,6 +90,7 @@
 							</td>
 							<td>
 								<select id="weather_language" name="weather_language" style="width:100px; margin:0px; background-color:#B7D2DD;" onchange="setLanguage(this.options[this.selectedIndex].value)">
+									<option value="ja">Japanese</option>
 									<option value="en">English</option>
 									<option value="fr">French</option>
 									<option value="de">German</option>
@@ -124,7 +126,7 @@
 </div>
 
 <!-- Today display -->
-<div style="background-color:#2A688D; height:200px;">
+<div style="background: #1a2980; /* fallback for old browsers */background: -webkit-linear-gradient(to right, #1a2980, #26d0ce); /* Chrome 10-25, Safari 5.1-6 */background: linear-gradient(to right, #1a2980, #26d0ce); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */; height:200px;">
 	<div id="daily_throbber" style="width:120px; height:200px; margin:0 auto; display:none;">
 		<img width="120px" height="120px" vspace="40px" src="images/throbber_3.gif"/>
 	</div>
@@ -197,7 +199,9 @@
 </div>
 
 <!-- hourly display -->
-<div style="background-color:#6DA9C3;">
+<div style="background: #005c97; /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #005c97, #363795); /* Chrome 10-25, Safari 5.1-6 */background: linear-gradient(to bottom, #005c97, #363795); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;">
+	
 	<div id="hourly_throbber" style="width:50px; height:80px; margin:0 auto; display:none;">
 		<img width="50px" height="50px" vspace="15px" src="images/throbber_3.gif" style=""/>
 	</div>
@@ -210,7 +214,9 @@
 </div>
 
 <!-- daily display -->
-<div style="background-color:#B7D2DD; margin-bottom:50px">
+<div style="background: #4b6cb7; /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #4b6cb7, #182848); /* Chrome 10-25, Safari 5.1-6 */background: linear-gradient(to bottom, #4b6cb7, #182848); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */; margin-bottom:50px">
+	
 	<div id="weather_daily" style="width:800px; margin:0 auto; padding:5px;">
 	</div>
 </div>

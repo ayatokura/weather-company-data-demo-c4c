@@ -40,9 +40,16 @@ app.configure(function(){
 
 // get the app environment from Cloud Foundry
 var appEnv = cfenv.getAppEnv();
-var weather_host = appEnv.services["weatherinsights"] 
-        ? appEnv.services["weatherinsights"][0].credentials.url // Weather credentials passed in
-        : ""; // or copy your credentials url here for standalone
+// var weather_host = appEnv.services["weatherinsights"] 
+//         ? appEnv.services["weatherinsights"][0].credentials.url // Weather credentials passed in
+//         : "https://api.weather.com"; // or copy your credentials url here for standalone
+
+console.log(appEnv);
+
+var weather_host = "https://api.weather.com";
+
+var apiKey = ""; // The Weather Company API Key をここに入れる
+
 
 function weatherAPI(path, qs, done) {
     var url = weather_host + path;
@@ -75,11 +82,12 @@ function weatherAPI(path, qs, done) {
 }
 
 app.get('/api/forecast/daily', function(req, res) {
-    var geocode = (req.query.geocode || "45.43,-75.68").split(",");
-    weatherAPI("/api/weather/v1/geocode/" + geocode[0] + "/" + geocode[1] + "/forecast/daily/10day.json", {
-        units: req.query.units || "m",
-        language: req.query.language || "en"
-    }, function(err, result) {
+    var geocode = (req.query.geocode || "35.68,139.68").split(",");
+    console.log(req.query.language);
+
+    weatherAPI("/v1/geocode/" + geocode[0] + "/" + geocode[1] + "/forecast/daily/10day.json?units=" + req.query.units + "&language=" +  req.query.language  + "&apiKey=" + apiKey, ""
+    , function(err, result) {
+        console.log(result);
         if (err) {
         	console.log(err);
             res.send(err).status(400);
@@ -91,11 +99,12 @@ app.get('/api/forecast/daily', function(req, res) {
 });
 
 app.get('/api/forecast/hourly', function(req, res) {
-    var geocode = (req.query.geocode || "45.43,-75.68").split(",");
-    weatherAPI("/api/weather/v1/geocode/" + geocode[0] + "/" + geocode[1] + "/forecast/hourly/48hour.json", {
-        units: req.query.units || "m",
-        language: req.query.language || "en"
-    }, function(err, result) {
+    var geocode = (req.query.geocode || "35.68,139.68").split(",");
+    console.log(req.query.language);
+
+    weatherAPI("/v1/geocode/" + geocode[0] + "/" + geocode[1] + "/forecast/hourly/48hour.json?units="+ req.query.units + "&language=" + req.query.language + "&apiKey=" + apiKey, ""
+    , function(err, result) {
+        console.log(result);
         if (err) {
             res.send(err).status(400);
         } else {
