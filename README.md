@@ -34,7 +34,7 @@ IBM Cloudのアカウントをご用意ください。Call for Code Day in Tokyo
 
 ## ローカルでアプリケーションを実行する
 
-5. `manifest.yml` ファイルの `<name>` および `<host>` に任意の文字列を入力し、保存します。
+5. `manifest.yml` ファイルの `<name>` および `<host>` に任意の文字列を入力し、保存します。またライトアカウントを利用している場合には、memoryを512から256に変更します。
   ```
 applications:
 - disk_quota: 1024M
@@ -44,7 +44,7 @@ applications:
   path: .
   domain: mybluemix.net
   instances: 1
-  memory: 512M
+  memory: 256M
   ```
  ここで指定した文字列はWebアプリケーションを公開するためのURLの一部となります。 `<host>.mybluemix.net` 
  
@@ -67,7 +67,7 @@ applications:
  
  9. IBM Cloudへデプロイします。
    ```
-  $ ibmcloud cf push
+  $ ibmcloud app push
   ```
   
  10. (オプション)IBM Cloudへデプロイしても、起動させずに手動でWebアプリケーションを稼働させる場合には下記のコマンドを実行します。
