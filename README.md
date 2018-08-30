@@ -6,7 +6,7 @@ The Weather Company APIを活用したWebアプリケーションを、IBM Cloud
 
 ## 事前準備
 本アプリケーションを動作させるためには、次のソフトウェアをローカルにインストールしてある環境が必要になります。
-1. Git - Gitをインストールしてください
+1. Git - [Git](https://git-scm.com/downloads)をインストールしてください
 2. Node - アプリケーションランタイム環境。[サイト](https://nodejs.org/en/)からパッケージをダウンロードしてインストールします。
 3. IBM Cloud 開発ツール「Cloud Foundry CLI」- [ツール](https://console.bluemix.net/docs/cli/index.html#cli)をダウンロードして、インストールします。
 4. コードエディタ。例えば、無料の軽量でマルチ環境(Windows, macOS, Linux)に対応している[Visual Studio Code](https://code.visualstudio.com/)など。
