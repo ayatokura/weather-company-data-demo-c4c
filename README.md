@@ -82,4 +82,5 @@ $ ibmcloud cf start [host name]
 11. IBM Cloudへのデプロイに成功すると下記URLでWebアプリケーションが公開されます。
 `https://<host>.mybluemix.net`
 
-
+# 完成イメージ
+<img src="https://8ingja.bn.files.1drv.com/y4molxlwvbLVOvjR5SLIGSY8tvPP1NHNYfvDoQf5QIHKpPPUAC-v85AYB60lANnbSkMh2VX2Z9KOeJqu8e9o8FX_q5QP3PWJXdQNWi9rj_fdv8q1-gxEV6CP6mqpvIJUc14SE3eaR3qo6knX-S7LtshIdYpi2NXfcuDhkhw9Qv_9zwVbABUkNEEsaB3xIYGUhcsmTv2sGNemMzvcI55RK3WDQ?width=1730&height=1368&cropmode=none" width="600">
