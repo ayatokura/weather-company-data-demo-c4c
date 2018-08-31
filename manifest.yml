@@ -6,4 +6,4 @@ applications:
   path: .
   domain: mybluemix.net
   instances: 1
-  memory: 512M
+  memory: 256M
