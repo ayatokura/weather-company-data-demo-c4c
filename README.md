@@ -8,7 +8,7 @@ The Weather Company APIを活用したWebアプリケーションを、IBM Cloud
 本アプリケーションを動作させるためには、次のソフトウェアをローカルにインストールしてある環境が必要になります。
 1. Git - [Git](https://git-scm.com/downloads)をインストールしてください
 2. Node - アプリケーションランタイム環境。[サイト](https://nodejs.org/en/)からパッケージをダウンロードしてインストールします。
-3. IBM Cloud 開発ツール「Cloud Foundry CLI」- [ツール](https://console.bluemix.net/docs/cli/index.html#cli)をダウンロードして、インストールします。
+3. IBM Cloud 開発ツール - [IBM Cloud CLI](https://console.bluemix.net/docs/cli/reference/ibmcloud/download_cli.html#install_use)をダウンロードして、インストールします。
 4. コードエディタ。例えば、無料の軽量でマルチ環境(Windows, macOS, Linux)に対応している[Visual Studio Code](https://code.visualstudio.com/)など。
 
 # 手順
@@ -34,7 +34,7 @@ IBM Cloudのアカウントをご用意ください。Call for Code Day in Tokyo
 
 ## ローカルでアプリケーションを実行する
 
-5. `manifest.yml` ファイルの `<name>` および `<host>` に任意の文字列を入力し、保存します。またライトアカウントを利用している場合には、memoryを512Mから256Mに変更します。
+5. `manifest.yml` ファイルの `<name>` および `<host>` に任意の文字列を入力し、保存します。
   ```
 applications:
 - disk_quota: 1024M
