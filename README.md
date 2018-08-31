@@ -34,12 +34,12 @@ IBM Cloudのアカウントをご用意ください。Call for Code Day in Tokyo
 
 ## ローカルでアプリケーションを実行する
 
-5. `manifest.yml` ファイルの `<name>` および `<host>` に任意の文字列を入力し、保存します。またライトアカウントを利用している場合には、memoryを512から256に変更します。
+5. `manifest.yml` ファイルの `<name>` および `<host>` に任意の文字列を入力し、保存します。またライトアカウントを利用している場合には、memoryを512Mから256Mに変更します。
   ```
 applications:
 - disk_quota: 1024M
-  name: weather-company-data-demo
-  host: weather-company-data-demo
+  name: <name>
+  host: <host>
   command: node app.js
   path: .
   domain: mybluemix.net
@@ -48,29 +48,36 @@ applications:
   ```
  ここで指定した文字列はWebアプリケーションを公開するためのURLの一部となります。 `<host>.mybluemix.net` 
  
- 6. アプリケーションをローカルで実行します。
-   ```
+ 6. [The Weather Company API Platform Site](https://callforcode.weather.com/)にアクセスし、登録(Sign up)してThe Weather Company APIを取得します。詳細な取得方法については[こちら](https://qiita.com/ayatokura/items/39fcdf140dc6567505bb)を参考にしてください。
+ 
+ 7. 登録後、自動生成されたAPI Keyが登録したメールアドレスに届いたAPI Keyを app.js の var apiKey に追加します。
+ ```
+ var apiKey = "";
+ ```
+ 
+ 8. アプリケーションをローカルで実行します。
+  ```
   node app
   ```
  
- 7. 実行されるとターミナルに次のようなメッセージが表示され、ブラウザで下記URLにアクセスするとWebアプリケーションが表示されます。
+ 9. 実行されるとターミナルに次のようなメッセージが表示され、ブラウザで下記URLにアクセスするとWebアプリケーションが表示されます。
    ```
   server starting on http://localhost:6001
    ```
  ## IBM Cloudへアプリケーションをデプロイする
  
- 8. ターミナルからIBM Cloudにログインします。
+ 10. ターミナルからIBM Cloudにログインします。
   ```
   $ ibmcloud login
   $ ibmcloud target --cf
   ```
  
- 9. IBM Cloudへデプロイします。
+ 11. IBM Cloudへデプロイします。
    ```
   $ ibmcloud app push
   ```
   
- 10. (オプション)IBM Cloudへデプロイしても、起動させずに手動でWebアプリケーションを稼働させる場合には下記のコマンドを実行します。
+ 12. (オプション)IBM Cloudへデプロイしても、起動させずに手動でWebアプリケーションを稼働させる場合には下記のコマンドを実行します。
  ```
 $ ibmcloud login
 $ ibmcloud target --cf
@@ -79,7 +86,7 @@ $ ibmcloud cf start [host name]
 ```
 
 ## 本アプリケーションへのアクセス
-11. IBM Cloudへのデプロイに成功すると下記URLでWebアプリケーションが公開されます。
+13. IBM Cloudへのデプロイに成功すると下記URLでWebアプリケーションが公開されます。
 `https://<host>.mybluemix.net`
 
 # 完成イメージ
