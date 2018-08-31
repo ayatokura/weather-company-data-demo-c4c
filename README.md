@@ -20,7 +20,7 @@ IBM Cloudのアカウントをご用意ください。Call for Code Day in Tokyo
 
 2. weather-company-data-demo-c4c リポジトリをローカルにクローンします。ターミナルで次のコマンドを実行します。  
   ```
-  git clone https://github.com/IBM-Bluemix/weather-company-data-demo.git
+  git clone hhttps://github.com/ayatokura/weather-company-data-demo-c4c.git
   ```
 
 3. `cd weather-company-data-demo-c4c` でディレクトリ移動します。
