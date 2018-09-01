@@ -1,5 +1,5 @@
 # The Weather Company API を活用したデモアプリケーション
-The Weather Company APIを活用したWebアプリケーションを、IBM Cloudにデプロイすることができる手順をご紹介します。
+The Weather Company APIを活用したWebアプリケーションを、IBM Cloudにデプロイすることができる手順をご紹介します。  
 ※The Weather Company Dataは日本IBMが気象庁より気象業務の許可を受け国内への配信を行なっています。特に気象予報データは「特定向け」を対象としたものであり、インターネット上などで不特定多数に公開することは禁じられています。Call for Codeの目的外で使用しないで下さい。
 
 ## Webアプリケーションの動作環境
