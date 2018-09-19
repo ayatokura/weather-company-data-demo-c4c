@@ -48,7 +48,7 @@ console.log(appEnv);
 
 var weather_host = "https://api.weather.com";
 
-var apiKey = "9d2908c81003444ea908c81003b44ed4"; // The Weather Company API Key をここに入れる
+var apiKey = "xxxxxxxxxxxxx"; // The Weather Company API Key をここに入れる
 
 
 function weatherAPI(path, qs, done) {

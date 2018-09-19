@@ -1,18 +1,18 @@
 # The Weather Company API を活用したデモアプリケーション
 The Weather Company APIを活用したWebアプリケーションを、IBM Cloudにデプロイすることができる手順をご紹介します。
 
-## Sysmtem Requrement
-Any Web Browser
+## Webアプリケーションの動作環境
+一般的なブラウザであれば、表示することができます。
 
-## Preparation
+## 事前準備
 本アプリケーションを動作させるためには、次のソフトウェアをローカルにインストールしてある環境が必要になります。
 1. Git - [Git](https://git-scm.com/downloads)をインストールしてください
 2. Node - アプリケーションランタイム環境。[サイト](https://nodejs.org/en/)からパッケージをダウンロードしてインストールします。
 3. IBM Cloud 開発ツール - [IBM Cloud CLI](https://console.bluemix.net/docs/cli/reference/ibmcloud/download_cli.html#install_use)をダウンロードして、インストールします。
 4. コードエディタ。例えば、無料の軽量でマルチ環境(Windows, macOS, Linux)に対応している[Visual Studio Code](https://code.visualstudio.com/)など。
 
-# Step
-## Clone Repository
+# 手順
+## リポジトリのクローン
 
 1. IBM Cloudアカウント作成
 IBM Cloudのアカウントをご用意ください。Call for Code Day in Tokyoに参加される方で、まだアカウントをお持ちでない方は[こちら](https://ibm.biz/BdYzDx
@@ -25,14 +25,14 @@ IBM Cloudのアカウントをご用意ください。Call for Code Day in Tokyo
 
 3. `cd weather-company-data-demo-c4c` でディレクトリ移動します。
 
-## Install dependancy
+## 依存関係のインストール
 
 4. ターミナルに戻り、npm installを実行します。
   ```
   npm install
   ```
 
-## Run local Web Application
+## ローカルでアプリケーションを実行する
 
 5. `manifest.yml` ファイルの `<name>` および `<host>` に任意の文字列を入力し、保存します。
   ```
@@ -64,7 +64,7 @@ applications:
    ```
   server starting on http://localhost:6001
    ```
- ## Deploy Web Application to IBM Cloud
+ ## IBM Cloudへアプリケーションをデプロイする
  
  10. ターミナルからIBM Cloudにログインします。
   ```
@@ -85,9 +85,9 @@ $ ibmcloud cf push --no-start
 $ ibmcloud cf start [host name]
 ```
 
-## Access to Published Web Site
+## 本アプリケーションへのアクセス
 13. IBM Cloudへのデプロイに成功すると下記URLでWebアプリケーションが公開されます。
 `https://<host>.mybluemix.net`
 
-# Web Application Image
+# 完成イメージ
 <img src="https://8ingja.bn.files.1drv.com/y4molxlwvbLVOvjR5SLIGSY8tvPP1NHNYfvDoQf5QIHKpPPUAC-v85AYB60lANnbSkMh2VX2Z9KOeJqu8e9o8FX_q5QP3PWJXdQNWi9rj_fdv8q1-gxEV6CP6mqpvIJUc14SE3eaR3qo6knX-S7LtshIdYpi2NXfcuDhkhw9Qv_9zwVbABUkNEEsaB3xIYGUhcsmTv2sGNemMzvcI55RK3WDQ?width=1730&height=1368&cropmode=none" width="600">
