@@ -1,44 +1,43 @@
-# The Weather Company API を活用したデモアプリケーション
-The Weather Company APIを活用したWebアプリケーションを、IBM Cloudにデプロイすることができる手順をご紹介します。  
+# A demo app that uses Weather Company Data API for IBM Cloud
 - - - - -
-★お願い★
-The Weather Company Dataは日本IBMが気象庁より気象業務の許可を受け国内への配信を行なっています。特に気象予報データは「特定向け」を対象としたものであり、インターネット上などで不特定多数に公開することは禁じられています。Call for Codeの目的外で使用しないで下さい。
+★Warning★
+This sample app is only for Call for Code Challenge 2018 Users.
 - - - - -
 
 ## Sysmtem Requrement
 Any Web Browser
 
 ## Preparation
-本アプリケーションを動作させるためには、次のソフトウェアをローカルにインストールしてある環境が必要になります。
-1. Git - [Git](https://git-scm.com/downloads)をインストールしてください
-2. Node - アプリケーションランタイム環境。[サイト](https://nodejs.org/en/)からパッケージをダウンロードしてインストールします。
-3. IBM Cloud 開発ツール - [IBM Cloud CLI](https://console.bluemix.net/docs/cli/reference/ibmcloud/download_cli.html#install_use)をダウンロードして、インストールします。
-4. コードエディタ。例えば、無料の軽量でマルチ環境(Windows, macOS, Linux)に対応している[Visual Studio Code](https://code.visualstudio.com/)など。
+The application requires the following software to be installed locally.
+1. Git - [Git](https://git-scm.com/downloads)
+2. Node - [Node](https://nodejs.org/en/)
+3. IBM Cloud Development Tool - [IBM Cloud CLI](https://console.bluemix.net/docs/cli/reference/ibmcloud/download_cli.html#install_use)
+4. Code Editor.  For example [Visual Studio Code](https://code.visualstudio.com/).
 
 # Step
 ## Clone Repository
 
-1. IBM Cloudアカウント作成
-IBM Cloudのアカウントをご用意ください。Call for Code Day in Tokyoに参加される方で、まだアカウントをお持ちでない方は[こちら](https://ibm.biz/BdYzDx
-)よりアカウント登録してください。
+1. Create IBM Cloud Account
+Prepare IBM Cloud Account.  If you don't have account, access [**here**](https://ibm.biz/BdYzDx
+) for **IBM Cloud for Call for Code** registration
 
-2. weather-company-data-demo-c4c リポジトリをローカルにクローンします。ターミナルで次のコマンドを実行します。  
+2. Clone weather-company-data-demo-c4c repo to your local environment from your terminal using the following command:  
   ```
   git clone https://github.com/ayatokura/weather-company-data-demo-c4c.git
   ```
 
-3. `cd weather-company-data-demo-c4c` でディレクトリ移動します。
+3. move to `cd weather-company-data-demo-c4c` directry.
 
 ## Install dependancy
 
-4. ターミナルに戻り、npm installを実行します。
+4. Run **npm install** command.
   ```
   npm install
   ```
 
-## Run local Web Application
+## Running the app locally
 
-5. `manifest.yml` ファイルの `<name>` および `<host>` に任意の文字列を入力し、保存します。
+5. Edit the manifest.yml file and change the <name> and <host> to something unique.
   ```
 applications:
 - disk_quota: 1024M
@@ -50,38 +49,38 @@ applications:
   instances: 1
   memory: 256M
   ```
- ここで指定した文字列はWebアプリケーションを公開するためのURLの一部となります。 `<host>.mybluemix.net` 
+ The host you use will determinate your application URL initially, for example, `<host>.mybluemix.net` 
  
- 6. [The Weather Company API Platform Site](https://callforcode.weather.com/)にアクセスし、登録(Sign up)してThe Weather Company APIを取得します。詳細な取得方法については[こちら](https://qiita.com/ayatokura/items/39fcdf140dc6567505bb)を参考にしてください。
+ 6. Access to [The Weather Company API Platform Site](https://callforcode.weather.com/) and sign up for The Weather Company API.  For more detail, [here](https://qiita.com/ayatokura/items/39fcdf140dc6567505bb) in Japanese.
  
- 7. 登録後、自動生成されたAPI Keyが登録したメールアドレスに届いたAPI Keyを app.js の var apiKey に追加します。
+ 7. Add API Key into app.js file.
  ```
  var apiKey = "";
  ```
  
- 8. アプリケーションをローカルで実行します。
+ 8. In a terminal, run:
   ```
   node app
   ```
  
- 9. 実行されるとターミナルに次のようなメッセージが表示されます。ブラウザで、表示されたURLにアクセスするとWebアプリケーションが表示されます。(例えば、下記の場合にはhttp://localhost:6001)
+ 9. You can access the UI by accessing the URL in the browser (For exapmple http://localhost:6001):
    ```
   server starting on http://localhost:6001
    ```
  ## Deploy Web Application to IBM Cloud
  
- 10. ターミナルからIBM Cloudにログインします。
+ 10. Log in to IBM Cloud.
   ```
   $ ibmcloud login
   $ ibmcloud target --cf
   ```
  
- 11. IBM Cloudへデプロイします。
+ 11. Deploy Web App to IBM Cloud.
    ```
   $ ibmcloud app push
   ```
   
- 12. (オプション)IBM Cloudへデプロイしても、起動させずに手動でWebアプリケーションを稼働させる場合には下記のコマンドを実行します。
+ 12. (Option) If you want to deploy without auto start, run the following command.
  ```
 $ ibmcloud login
 $ ibmcloud target --cf
@@ -90,7 +89,7 @@ $ ibmcloud cf start [host name]
 ```
 
 ## Access to Published Web Site
-13. IBM Cloudへのデプロイに成功すると下記URLでWebアプリケーションが公開されます。
+13. After deploying to IBM Cloud successfully, the web application will be published at the following URL.
 `https://<host>.mybluemix.net`
 
 # Web Application Image
